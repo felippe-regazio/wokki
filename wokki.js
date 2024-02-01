@@ -5,7 +5,7 @@ const wcs = document.querySelectorAll('template[wc-name]')
     const __script = template.content.querySelector('script');
     
     template.content.querySelectorAll('script').forEach(el => el.remove());
-    const __interpolations = template.content.textContent.match(/[^{{}}]+(?=}})/gm);
+    const __interpolations = Array.from(new Set(template.innerHTML.match(/[^{{}}]+(?=}})/gm)));
 
     window.customElements.define(__name, class extends HTMLElement {
       $initialized = false;
