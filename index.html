@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <template
+    wc-name="wc-counter"
+    count="1"
+  >
+    <style>
+      div {
+        background-color: #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      div p {
+        margin: 0;
+      }
+    </style>
+
+    <script>
+      const { count } = this.props;
+      const test = () => 'ok!';
+    </script>
+    
+    <div>
+      <p>Count: {{count}} {{test}}</p>
+      <p>Double: {{count * 2}}</p>
+    </div>
+  </template>
+
+  <!-- rendering the created component -->
+  <wc-counter count="5"></wc-counter>
+  <wc-counter count="5"></wc-counter>
+
+  <script src="wokki.js"></script>
+</body>
+</html>
